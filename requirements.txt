@@ -7,7 +7,7 @@ argon2-cffi-bindings==21.2.0
 astunparse==1.6.3
 atomicwrites==1.4.1
 attrs==22.1.0
-PyAudio==0.2.12
+sounddevice==0.4.4
 audioread==2.1.9
 backports.zoneinfo==0.2.1
 beautifulsoup4==4.11.1
