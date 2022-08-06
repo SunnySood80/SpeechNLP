@@ -15,7 +15,7 @@ import streamlit as st
 
 st.write('Try these Words: yes, no, up, down, left, right, on, off, stop, go')
 
-model=load_model('C:\\Users\\flurr\\Desktop\\SpeechRecogModel.h5')
+model=load_model('SpeechRecogModel.h5')
 classes = ['down', 'go', 'left', 'no', 'off', 'on', 'right', 'stop', 'up', 'yes']
 
 # Define the function that predicts text for the given audio:
@@ -32,7 +32,7 @@ if st.button(f"Click to Record"):
     record_state = st.text("Recording...")
     samplerate = 16000  
     duration = 1  # seconds
-    filename = 'C:\\Users\\flurr\\NLPtest\\yes.wav'
+    filename = 'yes.wav'
     st.write("Speak Now")
     mydata = sd.rec(int(samplerate * duration), samplerate=samplerate,channels=1, blocking=True)
     st.write("Recording Complete")
@@ -41,7 +41,7 @@ if st.button(f"Click to Record"):
     # Let us now read the saved voice command and convert it to text:\
     #reading the voice commands
 
-    samples, sample_rate = librosa.load('C:\\Users\\flurr\\NLPtest' + '\\' + 'yes.wav', sr = 16000)
+    samples, sample_rate = librosa.load('yes.wav', sr = 16000)
     samples = librosa.resample(samples, sample_rate, 8000)
     ipd.Audio(samples,rate=8000)      
 
@@ -49,7 +49,7 @@ if st.button(f"Click to Record"):
 
     st.write(predict(samples))
     #st.audio(read_audio(filename))
-    samples, sample_rate = librosa.load('C:\\Users\\flurr\\NLPtest\\yes.wav', sr = 16000)
+    samples, sample_rate = librosa.load('yes.wav', sr = 16000)
     fig = plt.figure(figsize=(14, 8))
     ax1 = fig.add_subplot(211)
     ax1.set_title('Spectrogram')
@@ -57,6 +57,6 @@ if st.button(f"Click to Record"):
     ax1.set_ylabel('Amplitude')
     ax1.plot(np.linspace(0, sample_rate/len(samples), sample_rate), samples)
     st.pyplot(fig)
-    audio_file = open('C:\\Users\\flurr\\NLPtest\\yes.wav', 'rb')
+    audio_file = open('yes.wav', 'rb')
     audio_bytes = audio_file.read()
     st.audio(audio_bytes)
