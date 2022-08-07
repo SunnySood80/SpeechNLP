@@ -29,7 +29,7 @@ def predict(audio):
 # **The best part is yet to come! Here is a script that prompts a user to record voice commands. Record your own voice commands and test it on the model:**
 
 if st.button(f"Click to Record"):
-    record_state = st.text("Recording...")
+    '''record_state = st.text("Recording...")
     samplerate = 16000  
     duration = 1  # seconds
     filename = 'yes.wav'
@@ -47,7 +47,7 @@ if st.button(f"Click to Record"):
 
     #converting voice commands to text
 
-    st.write(predict(samples))
+    st.write(predict(samples))'''
     #st.audio(read_audio(filename))
     samples, sample_rate = librosa.load('yes.wav', sr = 16000)
     fig = plt.figure(figsize=(14, 8))
