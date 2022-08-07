@@ -1,5 +1,5 @@
-absl-py==1.2.0==pypi_0
-altair==4.2.0==pypi_0
+absl-py==1.2.0=pypi_0
+altair==4.2.0=pypi_0
 amqp==5.1.1==pypi_0
 appdirs==1.4.4==pypi_0
 argon2-cffi==21.3.0==pypi_0
