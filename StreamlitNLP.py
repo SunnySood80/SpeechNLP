@@ -12,6 +12,7 @@ import IPython.display as ipd
 from scipy.io import wavfile
 from keras.models import load_model
 import streamlit as st
+from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration
 
 st.write('Try these Words: yes, no, up, down, left, right, on, off, stop, go')
 
@@ -27,6 +28,19 @@ def predict(audio):
 
 
 # **The best part is yet to come! Here is a script that prompts a user to record voice commands. Record your own voice commands and test it on the model:**
+
+RTC_CONFIGURATION = RTCConfiguration(
+    {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
+)
+
+webrtc_ctx = webrtc_streamer(
+    key="WYH",
+    mode=WebRtcMode.SENDRECV,
+    rtc_configuration=RTC_CONFIGURATION,
+    media_stream_constraints={"video": True, "audio": False},
+    #video_processor_factory=VideoProcessor,
+    async_processing=True,
+)
 
 if st.button(f"Click to Record"):
     '''record_state = st.text("Recording...")
