@@ -37,7 +37,7 @@ webrtc_ctx = webrtc_streamer(
     key="WYH",
     mode=WebRtcMode.SENDRECV,
     rtc_configuration=RTC_CONFIGURATION,
-    media_stream_constraints={"video": True, "audio": False},
+    media_stream_constraints={"video": False, "audio": True},
     #video_processor_factory=VideoProcessor,
     async_processing=True,
 )
