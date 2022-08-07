@@ -5,7 +5,7 @@ import warnings
 warnings.filterwarnings("ignore")
 import matplotlib.pyplot as plt
 import numpy as np
-import sounddevice as sd
+#import sounddevice as sd
 import soundfile as sf
 import librosa
 import IPython.display as ipd
@@ -21,10 +21,10 @@ classes = ['down', 'go', 'left', 'no', 'off', 'on', 'right', 'stop', 'up', 'yes'
 
 # Define the function that predicts text for the given audio:
 
-def predict(audio):
+'''def predict(audio):
     prob=model.predict(audio.reshape(1,8000,1))
     index=np.argmax(prob[0])
-    return classes[index]
+    return classes[index]'''
 
 
 # **The best part is yet to come! Here is a script that prompts a user to record voice commands. Record your own voice commands and test it on the model:**
@@ -42,7 +42,7 @@ webrtc_ctx = webrtc_streamer(
     async_processing=True,
 )
 
-if st.button(f"Click to Record"):
+'''if st.button(f"Click to Record"):
     '''record_state = st.text("Recording...")
     samplerate = 16000  
     duration = 1  # seconds
@@ -73,4 +73,4 @@ if st.button(f"Click to Record"):
     st.pyplot(fig)
     audio_file = open('yes.wav', 'rb')
     audio_bytes = audio_file.read()
-    st.audio(audio_bytes)
+    st.audio(audio_bytes)'''
