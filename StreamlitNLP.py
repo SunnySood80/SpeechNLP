@@ -43,7 +43,7 @@ webrtc_ctx = webrtc_streamer(
 )
 
 '''if st.button(f"Click to Record"):
-    '''record_state = st.text("Recording...")
+    record_state = st.text("Recording...")
     samplerate = 16000  
     duration = 1  # seconds
     filename = 'yes.wav'
@@ -61,7 +61,7 @@ webrtc_ctx = webrtc_streamer(
 
     #converting voice commands to text
 
-    st.write(predict(samples))'''
+    st.write(predict(samples))
     #st.audio(read_audio(filename))
     samples, sample_rate = librosa.load('yes.wav', sr = 16000)
     fig = plt.figure(figsize=(14, 8))
